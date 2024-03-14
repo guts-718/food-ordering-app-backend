@@ -1,4 +1,3 @@
-
 import { NextFunction, Request, Response } from "express";
 import { auth } from "express-oauth2-jwt-bearer";
 import jwt from "jsonwebtoken";
@@ -16,7 +15,8 @@ declare global {
 }
 
 // Middleware function to check JWT token.
-// This function verifies the incoming token against the configured audience, issuer, and signing algorithm.
+// middleware function for JWT (JSON Web Token) authentication.
+// auth is a function which is taking an object as an argument
 export const jwtCheck = auth({
     audience: process.env.AUTH0_AUDIENCE, // The audience that the token must be intended for
     issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL, // The base URL of the token issuer
