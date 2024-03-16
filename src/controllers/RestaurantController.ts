@@ -9,7 +9,7 @@ const getRestaurant = async (req: Request, res: Response) => {
     if (!restaurant) {
       return res.status(404).json({ message: "restaurant not found" });
     }
-
+    // whenever we do res.json() it automatically adds the status of 200
     res.json(restaurant);
   } catch (error) {
     console.log(error);
